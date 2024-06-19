@@ -1,5 +1,5 @@
 {
-  "name": "curd-sdk-demo-1",
+  "name": "@rupali-inflection/curd-sdk-demo-1",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,5 +16,13 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
+  },
+  "author": "rupali",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupali-inflection/curd-sdk-demo-1.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
