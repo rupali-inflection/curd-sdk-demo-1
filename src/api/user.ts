@@ -1,10 +1,9 @@
 import { Base } from './base';
 
 type User = {
-  // id: number;
+  id ?: number;
   name: string;
   email: string;
-  
 };
 
 export class Users extends Base {
@@ -21,7 +20,7 @@ export class Users extends Base {
     return this.request(`/users/${userId}`);
   }
 
-  async SearchUsers(): Promise<User[]> {
+  async searchUsers(): Promise<User[]> {
     return this.request(`/users/search`);
   }
 

@@ -1,8 +1,8 @@
 // import fetch, { RequestInit } from 'node-fetch';
 import fetch from 'isomorphic-unfetch';
 type Config = {
-  apiKey: string;
-  baseUrl?: string;
+  apiKey?: string;
+  baseUrl: string;
 };
 
 export abstract class Base {
@@ -10,8 +10,8 @@ export abstract class Base {
   private baseUrl: string;
 
   constructor(config: Config) {
-    this.apiKey = config.apiKey;
-    this.baseUrl = config.baseUrl || 'https://jsonplaceholder.typicode.com';
+    this.apiKey = config.apiKey ?? 'xyz';
+    this.baseUrl = config.baseUrl;
   }
 
   // protected async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -39,7 +39,7 @@ export abstract class Base {
     const url = `${this.baseUrl}${endpoint}`;
     const headers = {
       'Content-Type': 'application/json',
-      'api-key': this.apiKey,
+      'x-api-key': `${this.apiKey}`
     };
     const config = {
       ...options,
@@ -53,4 +53,5 @@ export abstract class Base {
       throw new Error(response.statusText);
     });
   }
+
 }

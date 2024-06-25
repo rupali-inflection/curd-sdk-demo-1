@@ -7,7 +7,7 @@ export class Library {
   users: Users;
   paitents :Paitents
 
-  constructor(config: { apiKey: string; baseUrl?: string }) {
+  constructor(config: { apiKey?: string; baseUrl: string }) {
     this.posts = new Posts(config);
     this.users = new Users(config);
     this.paitents = new Paitents(config);
